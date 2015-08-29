@@ -18,12 +18,12 @@ $(call inherit-product-if-exists, vendor/lge/f320/f320-vendor.mk)
 $(call inherit-product, device/lge/g2-common/g2.mk)
 
 ## overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # Init files not shared with G2-common
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.g2.rc:root/init.g2.rc \
-    $(LOCAL_PATH)/fstab.g2:root/fstab.g2
+PRODUCT_PACKAGES += \
+    init.g2.rc \
+    fstab.g2
 
 # GSM permissions
 PRODUCT_COPY_FILES += \
