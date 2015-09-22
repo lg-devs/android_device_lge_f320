@@ -20,6 +20,11 @@ $(call inherit-product, device/lge/g2-common/g2.mk)
 ## overlays
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
+## G2 F320 RIL
+PRODUCT_PROPERTY_OVERRIDES += \
+	telephony.lteOnGsnDevice=1 \
+	ro.telephony.default_network=9
+
 # Init files not shared with G2-common
 PRODUCT_PACKAGES += \
     init.g2.rc \
